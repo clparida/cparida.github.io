@@ -1,114 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal website of [Chandanlal Parida] - Portfolio, Projects, and Contact">
-  <title>[Chandanlal Parida] | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Reset & base styles */
-    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif;}
-    body {line-height:1.6; color:#333;}
-    a {text-decoration:none; color:inherit;}
-    img {max-width:100%; height:auto; display:block;}
 
-    /* Header */
-    header {background:#1e1e2f; color:white; padding:20px 0; text-align:center;}
-    header h1 {font-size:2.5rem;}
-    header p {font-size:1.2rem; color:#ccc;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Navigation */
-    nav {display:flex; justify-content:center; gap:20px; margin-top:10px;}
-    nav a {color:white; padding:8px 12px; transition:0.3s;}
-    nav a:hover {background:#fff; color:#1e1e2f; border-radius:5px;}
+<title>Chandanlal Parida | Oceanography Research</title>
 
-    /* Sections */
-    section {padding:60px 20px; max-width:1000px; margin:0 auto;}
-    section h2 {text-align:center; margin-bottom:40px; font-size:2rem; color:#1e1e2f;}
+<link rel="stylesheet" href="css/style.css">
 
-    /* About */
-    #about p {max-width:700px; margin:0 auto 20px; text-align:center;}
-
-    /* Portfolio */
-    #portfolio .projects {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
-    #portfolio .project {background:#f5f5f5; padding:20px; border-radius:10px; transition:0.3s;}
-    #portfolio .project:hover {transform:translateY(-5px); box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-    #portfolio .project img {border-radius:10px;}
-    #portfolio .project h3 {margin-top:15px; color:#1e1e2f;}
-
-    /* Contact */
-    #contact form {max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;}
-    #contact input, #contact textarea {padding:10px; border:1px solid #ccc; border-radius:5px; width:100%;}
-    #contact button {padding:10px; border:none; border-radius:5px; background:#1e1e2f; color:white; font-size:1rem; cursor:pointer; transition:0.3s;}
-    #contact button:hover {background:#333;}
-
-    /* Footer */
-    footer {text-align:center; padding:20px; background:#1e1e2f; color:white;}
-    footer a {margin:0 10px; color:white; transition:0.3s;}
-    footer a:hover {color:#ff6b6b;}
-  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Chandanlal Parida</h1>
-    <p>Oceanography | Satellite Remote Sensing | Numerical modeling</p>
-    <nav>
-      <a href="#about">About me</a>
-      <a href="#portfolio">my work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Chandanlal Parida, hhhhhhhh.</p>
-  </section>
+<h1>Chandanlal Parida</h1>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>My Work</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://via.placeholder.com/400x250" alt="Project 1">
-        <h3>Project Title 1</h3>
-        <p>Short description of the project and the technologies used.</p>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/400x250" alt="Project 2">
-        <h3>Project Title 2</h3>
-        <p>Short description of the project and the technologies used.</p>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/400x250" alt="Project 3">
-        <h3>Project Title 3</h3>
-        <p>Short description of the project and the technologies used.</p>
-      </div>
-    </div>
-  </section>
+<p>Oceanography | Satellite Remote Sensing | Numerical Modeling</p>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/[your-id]" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<nav>
 
-  <!-- Footer -->
-  <footer>
-    <p>Connect with me:</p>
-    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
-    <p>&copy; 2026 [Your Name]. All rights reserved.</p>
-  </footer>
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="publications.html">Publications</a>
+<a href="cv.html">CV</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<img src="images/profile.jpg" class="profile">
+
+<div>
+
+<h2>About Me</h2>
+
+<p>
+
+I am a researcher in physical oceanography focusing on satellite remote
+sensing and numerical modeling to study ocean circulation, climate
+variability, and air-sea interaction processes.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Research Highlights</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="images/satellite.jpg">
+
+<h3>Satellite Oceanography</h3>
+
+<p>Using satellite altimetry and SST data to analyze ocean variability.</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/ocean.jpg">
+
+<h3>Ocean Circulation</h3>
+
+<p>Studying large-scale ocean dynamics and climate interactions.</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/project1.jpg">
+
+<h3>Numerical Modeling</h3>
+
+<p>Simulation of ocean processes using numerical models.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Chandanlal Parida</p>
+
+</footer>
 
 </body>
 </html>
