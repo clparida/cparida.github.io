@@ -1,50 +1,49 @@
+/*--------------------------------------------------------------
+# Font Import
+--------------------------------------------------------------*/
 @import url('https://db.onlinewebfonts.com/c/3d18c62185ee82746907f855396b52a5?family=Nexus+Sans+Pro');
-/**
-* Template Name: iPortfolio - v1.3.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
-# General
+# Root Variables
+--------------------------------------------------------------*/
+:root {
+  --font-base: "Nexus Sans Pro", "NexusSansPro", "Nexus Sans", Arial, Helvetica, sans-serif;
+  --primary-color: teal;
+  --secondary-color: #006666;
+  --light-color: #fff;
+  --dark-color: #2d2b2c;
+}
+
+/*--------------------------------------------------------------
+# Global Styles
 --------------------------------------------------------------*/
 body {
-  font-family: var(--font-base);
-  color: #2d2b2c;
-}
-
-canvas {
-  display: block;
-}
-
-/* ---- particles.js container ---- */
-
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-a {
-  color: #eee;
-}
-
-a:hover {
-  color: #006666;
-  text-decoration: none;
+  font-family: var(--font-base) !important;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
+  font-family: var(--font-base) !important;
+  margin: 0;
+}
+
+p, a, span, strong, em, label, input, select, textarea, button, .btn {
+  font-family: var(--font-base) !important;
+}
+
+a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
-# Back to top button
+# Back to Top Button
 --------------------------------------------------------------*/
 .back-to-top {
   position: fixed;
@@ -54,10 +53,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: teal;
-  color: #fff;
-  transition: display 0.5s ease-in-out;
-  z-index: 99999;
+  background: var(--primary-color);
+  color: var(--light-color);
+  z-index: 9999;
+  cursor: pointer;
 }
 
 .back-to-top i {
@@ -68,9 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  color: #fff;
-  background: #006666;
-  transition: background 0.2s ease-in-out;
+  background: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
@@ -82,55 +79,29 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
-  z-index: 9997;
-  transition: all 0.5s;
+  background: var(--primary-color);
   padding: 0 15px;
-  background: teal;
   overflow-y: auto;
+  z-index: 9997;
+  transition: all 0.5s ease-in-out;
 }
 
 #header .profile img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #006666;
+  border: 8px solid var(--secondary-color);
 }
 
 #header .profile h1 {
   font-size: 24px;
-  margin: 0;
-  padding: 0;
   font-weight: 600;
-  -moz-text-align-last: center;
-  text-align-last: center;
-  font-family: inherit;
-}
-
-#header .profile h1 a, #header .profile h1 a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-#header .profile .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #eee;
-  color: #006666;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
+  color: var(--light-color);
 }
 
-#header .profile .social-links a:hover {
-  background: #006666;
-  color: #eee;
-  text-decoration: none;
+#header .profile h1 a {
+  color: var(--light-color);
 }
 
 #main {
@@ -138,108 +109,94 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1199px) {
-  #header {
-    left: -300px;
-  }
-  #main {
-    margin-left: 0;
-  }
+  #header { left: -300px; }
+  #main { margin-left: 0; }
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
 .nav-menu {
-  padding-top: 30 px;
+  padding-top: 30px;
 }
-
 .nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 .nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
 }
-
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--light-color);
   padding: 12px 15px;
   margin-bottom: 8px;
-  transition: 0.3s;
   font-size: 15px;
+  transition: 0.3s;
 }
-
 .nav-menu a i {
-  font-size: 24px;
   padding-right: 8px;
-  color: white;
+  font-size: 24px;
+  color: var(--light-color);
+}
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+  color: var(--secondary-color);
+}
+.nav-menu a:hover i,
+.nav-menu .active > a i,
+.nav-menu li:hover > a i {
+  color: var(--secondary-color);
 }
 
-.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  text-decoration: none;
-  color: black;
-}
-
-.nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i {
-  color: black;
-}
-
-/* Mobile Navigation */
+/*--------------------------------------------------------------
+# Mobile Nav Toggle
+--------------------------------------------------------------*/
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
   top: 15px;
   z-index: 9998;
-  border: 0;
+  border: none;
   background: none;
   font-size: 24px;
-  transition: all 0.4s;
-  outline: none !important;
-  line-height: 1;
   cursor: pointer;
-  text-align: right;
 }
-
 .mobile-nav-toggle i {
-  color: #006666;
+  color: var(--secondary-color);
 }
-
-.mobile-nav-active {
-  overflow: hidden;
-}
-
 .mobile-nav-active #header {
   left: 0;
-}
-
-.mobile-nav-active .mobile-nav-toggle i {
-  color: #006666;
 }
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("../img/hero-bg.jpg") top center no-repeat;
   background-size: cover;
 }
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
   position: absolute;
-  bottom: 0;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  background: rgba(5,13,24,0.3);
   z-index: 1;
 }
 
@@ -247,50 +204,64 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  padding: 0 15px;
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 64px;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
-  line-height: 56px;
-  color: #fff;
+  line-height: 1.2;
+  color: var(--light-color);
+  margin-bottom: 1rem;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #hero p {
-  color: #fff;
-  margin-bottom: 50px;
-  font-size: 26px;
-  font-family: inherit;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 700px;
+  color: var(--light-color);
+  margin: 0 auto;
+  transition: opacity 0.5s ease-in-out;
 }
 
-#hero p span {
-  color: #fff;
-  padding-bottom: 4px;
-  letter-spacing: 1px;
-  border-bottom: 3px solid rgb(5, 216, 216);
-}
-
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
+/* Particles.js container */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
 }
 
 /*--------------------------------------------------------------
-# Sections General
+# Buttons
+--------------------------------------------------------------*/
+.btn-secondary {
+  background: var(--light-color);
+  border: 3px solid var(--primary-color);
+  color: var(--dark-color);
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--primary-color);
+  color: var(--light-color);
+  outline: none;
+  box-shadow: none;
+}
+.btn-secondary:active {
+  background: var(--primary-color) !important;
+  color: var(--light-color);
+}
+
+/*--------------------------------------------------------------
+# Sections
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
@@ -309,849 +280,39 @@ section {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  color: var(--secondary-color);
   position: relative;
-  color: #006666;
 }
-
 .section-title h2::after {
   content: '';
   position: absolute;
   display: block;
   width: 50px;
   height: 3px;
-  background: teal;
+  background: var(--primary-color);
   bottom: 0;
   left: 0;
 }
-
 .section-title p {
   margin-bottom: 0;
 }
-
-/* Reduce paragraph spacing in the About section for readability */
-.about .section-title p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.skills-content h4 {
-  padding-bottom: 10px;
-  font-weight: 600;
-}
-
-/*--------------------------------------------------------------
-# About
---------------------------------------------------------------*/
-.about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #006666;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  padding-bottom: 10px;
-}
-
-.about .content ul i {
-  font-size: 20px;
-  padding-right: 2px;
-  color: #006666;
-}
-
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
-}
-
-.facts .count-box {
-  padding: 30px;
-  width: 100%;
-}
-
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #006666;
-  float: left;
-}
-
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: inherit;
-  font-size: 14px;
-  color: #006666;
-}
-
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: inherit;
-  transition: ease-in-out 0.3s;
-}
-
-.facts .count-box a:hover {
-  color: #006666;
-}
-
-/*--------------------------------------------------------------
-# Akills
---------------------------------------------------------------*/
-.skills .progress {
-  height: 50px;
-  display: block;
-  background: none;
-}
-
-.skills .progress .skill {
-  padding: 10px 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: inherit;
-  color: #050d18;
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: .9s;
-  background-color: teal;
-}
-
-/*--------------------------------------------------------------
-# Resume
---------------------------------------------------------------*/
-.resume .resume-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #2d2b2c;
-}
-
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid teal;
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: inherit;
-  color: #2d2b2c;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid teal;
-}
-
-.btn-secondary {
-  background: #fff;
-  border: 3px solid teal;
-  color: #2d2b2c;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.btn-secondary:hover {
-  background: teal;
-  border: 3px solid teal;
-  color: #fff;
-}
-
-.btn-secondary:focus{
-  background-color: teal;
-  outline: none;
-  box-shadow: none;
-}
-
-.btn-secondary:active{
-  background-color: teal!important;
-  outline: none;
-  box-shadow: none;
-}
-.btn-secondary:active:focus{
-  background-color: teal!important;
-  outline: none;
-  box-shadow: none!important;
-}
-
-/*--------------------------------------------------------------
-# Researh
---------------------------------------------------------------*/
-.research .researh-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #2d2b2c;
-}
-/*--------------------------------------------------------------
-# Portfolio
---------------------------------------------------------------*/
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
-}
-
-.portfolio #portfolio-flters {
-  padding: 0;
-  margin: 0 auto 35px auto;
-  list-style: none;
-  text-align: left;
-  background: #fff;
-  border-radius: 50px;
-  padding: 2px 15px;
-}
-
-.portfolio #portfolio-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px 15px 8px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #2d2b2c;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-wrap img{
-  border-bottom: 3px solid #006666;
-}
-
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: teal;
-}
-
-.portfolio #portfolio-flters li:last-child {
-  margin-right: 0;
-}
-
-.portfolio .portfolio-wrap {
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.portfolio .portfolio-wrap::before {
-  content: "";
-  background: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
-}
-
-.portfolio .portfolio-wrap .portfolio-links {
-  opacity: 1;
-  left: 0;
-  right: 0;
-  bottom: -60px;
-  z-index: 3;
-  position: absolute;
-  transition: all ease-in-out 0.3s;
-  display: flex;
-  justify-content: center;
-}
-
-.portfolio .portfolio-wrap .portfolio-links a {
-  color: #fff;
-  font-size: 28px;
-  text-align: center;
-  background: teal;
-  transition: 0.3s;
-  width: 50%;
-}
-
-.portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: #006666;
-}
-
-.portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #006666;
-}
-
-.portfolio .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-links {
-  opacity: 1;
-  bottom: 0;
-}
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services .icon-box {
-  margin-bottom: 20px;
-}
-
-.services .icon {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  background: teal;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid #006666;
-}
-
-.services .icon i {
-  color: #fff;
-  font-size: 24px;
-}
-
-.services .icon-box:hover .icon {
-  background: #fff;
-}
-
-.services .icon-box:hover .icon i {
-  color: #006666;
-}
-
-.services .title {
-  margin-left: 80px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.services .title a {
-  color: #2d2b2c;
-}
-
-.services .title a:hover {
-  color: #006666;
-}
-
-.services .description {
-  margin-left: 80px;
-  line-height: 24px;
-  font-size: 14px;
-}
-
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  text-align: center;
-  min-height: 320px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  color: #111;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #999;
-  margin: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #c3e8fa;
-  font-size: 26px;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 15px 15px;
-  padding: 20px;
-  background: #fff;
-  position: relative;
-  margin-bottom: 35px;
-  border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials .testimonial-item p::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 20px solid #fff;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  position: absolute;
-  bottom: -20px;
-  left: calc(50% - 20px);
-}
-
-.testimonials .owl-nav, .testimonials .owl-dots {
-  margin-top: 5px;
-  text-align: center;
-}
-
-.testimonials .owl-dot {
-  display: inline-block;
-  margin: 0 5px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ddd !important;
-}
-
-.testimonials .owl-dot.active {
-  background-color: #006666 !important;
-}
-
-@media (max-width: 767px) {
-  .testimonials {
-    margin: 30px 10px;
-  }
-}
-
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-.contact {
-  padding-bottom: 130px;
-}
-
-.contact .info {
-  padding: 30px;
-  background: #fff;
-  width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
-
-.contact .info i {
-  font-size: 20px;
-  color: #006666;
-  float: left;
-  width: 44px;
-  height: 44px;
-  background: #dff3fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-}
-
-.contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #2d2b2c;
-}
-
-.contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #2d2b2c;
-}
-
-.contact .info .email p {
-  padding-top: 5px;
-}
-
-.contact .info .social-links {
-  padding-left: 60px;
-}
-
-.contact .info .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-  margin-right: 10px;
-}
-
-.contact .info .social-links a:hover {
-  background: #006666;
-  color: #fff;
-}
-
-.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #006666;
-  color: #fff;
-}
-
-.contact .php-email-form {
-  width: 100%;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br + br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid teal;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.contact .php-email-form button[type="submit"] {
-  background: #fff;
-  border: 3px solid #006666;
-  padding: 10px 24px;
-  color: #2d2b2c;
-  transition: 0.4s;
-  border-radius: none;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  background: teal;
-  color: #eee;
-}
-
-.contact .php-email-form button[type="submit"]:active {
-  background: teal;
-  color: #eee;
-  outline: none !important;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0;
-  background: #f9f9f9;
-}
-
-.breadcrumbs h2 {
-  font-size: 26px;
-  font-weight: 300;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 15px;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #2d2b2c;
-  content: "/";
-}
-
-@media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-  .breadcrumbs ol {
-    display: block;
-  }
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
-}
-
-.portfolio-details .portfolio-details-container {
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-carousel {
-  position: relative;
-  z-index: 1;
-}
-
-.portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
-  margin-top: 5px;
-  text-align: left;
-}
-
-.portfolio-details .portfolio-details-carousel .owl-dot {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ddd !important;
-}
-
-.portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #006666 !important;
-}
-
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  position: absolute;
-  right: 0;
-  bottom: -70px;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li + li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 50px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  width: 50%;
-  font-size: 26px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-}
-
-
-
-@media (max-width: 768px) {
-  .portfolio-details .portfolio-description h2 {
-    width: 100%;
-  }
-  .portfolio-details .portfolio-info {
-    position: static;
-    margin-top: 30px;
-  }
-}
-
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
   padding: 15px;
-  color: #f4f6fd;
+  color: var(--light-color);
   font-size: 14px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: teal;
-  border-top: 1px solid #eee;
+  background: var(--primary-color);
 }
-
-#footer .copyright {
-  text-align: center;
-}
-
+#footer .copyright,
 #footer .credits {
-  padding-top: 5px;
   text-align: center;
   font-size: 13px;
   color: #eaebf0;
@@ -1161,67 +322,31 @@ section {
   #footer {
     position: static;
     width: auto;
-    padding-right: 20px 15px;
+    padding: 15px;
   }
-  
 }
 
-
-/* -------------------------------------------------------------
-   Typography override: Nexus Sans Pro across the site
-   Note: This enforces Nexus Sans Pro if available on the device.
-   To self-host, place font files under assets/fonts/ and uncomment
-   the @font-face blocks below, updating URLs to your files.
--------------------------------------------------------------- */
-
-/* Example (uncomment and provide actual files)
-@font-face {
-  font-family: "Nexus Sans Pro";
-  src: url("../fonts/NexusSansPro-Regular.woff2") format("woff2"),
-       url("../fonts/NexusSansPro-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Nexus Sans Pro";
-  src: url("../fonts/NexusSansPro-Bold.woff2") format("woff2"),
-       url("../fonts/NexusSansPro-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-
-:root {
-  --font-base: "Nexus Sans Pro", "NexusSansPro", "Nexus Sans", Arial, Helvetica, sans-serif;
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+  }
+  #hero p {
+    font-size: 16px;
+  }
+  #header {
+    width: 250px;
+  }
+  #main {
+    margin-left: 0;
+  }
 }
 
-/* Apply to common text elements but avoid overriding icon fonts */
-body,
-h1, h2, h3, h4, h5, h6,
-p, a, span, strong, em,
-label, input, select, textarea,
-button, .btn,
-.nav-menu a,
-#header .profile h1,
-#hero p,
-.facts .count-box p,
-.facts .count-box a,
-.skills .progress .skill,
-.resume .resume-item h4,
-.services .title,
-.portfolio-details .portfolio-info,
-.breadcrumbs h2,
-.contact .info h4,
-.contact .info p,
-.contact .php-email-form input,
-.contact .php-email-form textarea,
-.contact .php-email-form button {
-  font-family: var(--font-base) !important;
-}
-
-/* Carousel indicators as circles */
+/*--------------------------------------------------------------
+# Carousel Indicators
+--------------------------------------------------------------*/
 .carousel-indicators [data-bs-target] {
   width: 16px;
   height: 16px;
@@ -1237,30 +362,3 @@ button, .btn,
   opacity: 1;
   border: 2px solid #0056b3;
 }
-.carousel-indicators [data-bs-target]:hover,
-.carousel-indicators [data-bs-target]:focus {
-  opacity: 1;
-  background-color: #e3f2fd;
-  border: 2px solid #0056b3;
-}
-
-/* Center carousel arrows vertically and style */
-.carousel-control-prev,
-.carousel-control-next {
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: auto;
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 60% 60%;
-  filter: drop-shadow(0 0 2px #007bff);
-}
-
