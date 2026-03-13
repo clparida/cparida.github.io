@@ -183,7 +183,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: right;
   overflow: hidden;
   background: url("../img/hero-bg.jpg") top center no-repeat;
   background-size: cover;
