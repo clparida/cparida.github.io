@@ -5,8 +5,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Chandanlal Parida</title>  
-<meta name="description"
-    content="Oceanographer. Explore my portfolio, research output, resume, and contact details.">  
+<meta name="description" content="Oceanographer. Explore my portfolio, research output, resume, and contact details.">  
 <meta property="og:title" content="Chandanlal Parida | Oceanographer">  
 <meta property="og:description" content="Explore my portfolio, research output, resume, and contact details.">  
 <meta property="og:image" content="assets/img/portfolio/background.jpg">
@@ -31,92 +30,108 @@
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
 
+<style>
+  /* Hero Section */
+  #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden;
+    background-color: #000; /* fallback if particles don't load */
+  }
+
+  #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2; /* above particles */
+    color: #fff;
+  }
+
+  #study-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #study-desc {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    max-width: 700px;
+    line-height: 1.5;
+    margin: 0 auto;
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
+
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+<!-- ======= Header ======= -->
+<header id="header">
+  <div class="d-flex flex-column">
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/portfolio/profile.jpeg" 
-     alt="Chandanlal Parida profile photo"   class="img-fluid rounded-0"   style="border: none; box-shadow: none;"
-     loading="lazy"  decoding="async">
-        <h1 class="text-light"><a href="index.html">Dr. Chandanlal Parida</a></h1>
-        <!--<div class="social-links mt-3 text-center">
-          <a href="https://www.facebook.com/ronygolderku/" class="facebook" target="_blank"><i
-              class="bx bxl-facebook"></i></a>
-          <a href="https://www.linkedin.com/in/ronygolder/" class="linkedin" target="_blank"><i
-              class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/ronygolderku" class="github" target="_blank"><i class="bx bxl-github"></i></a>
-          <a href="https://www.researchgate.net/profile/Md-Golder" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-researchgate"></i></a>
-          <a href="https://twitter.com/rony_golderku" class="twitter" target="_blank" aria-label="X (formerly Twitter)">
-            <i class="fa-brands fa-square-x-twitter" aria-hidden="true"></i>
-          </a>
-          <!-- <a href="https://orcid.org/0000-0002-6863-139X" class="orcid" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i></a> -->
-          <!--<a href="https://scholar.google.com/citations?user=yXg7upIAAAAJ&hl=en" class="scholar" target="_blank"
-            rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>-->
-        </div>
-      </div>
-
-      <nav class="nav-menu">
-        <ul>
-          <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="about.html"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="resume.html"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="portfolio.html"><i class="bx bx-book-content"></i> Portfolio</a></li>
-          <li><a href="publications.html"><i class="bx bx-book"></i> Research Output</a></li>
-          <li><a href="contact.html"><i class="bx bx-envelope"></i> Contact</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-     <button type="button" 
-        class="mobile-nav-toggle d-xl-none" 
-        style="background-color: #4CAF50; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-size: 18px;">
-    <i class="icofont-navigation-menu"></i>
-</button>
-
+    <div class="profile">
+      <img src="assets/img/portfolio/profile.jpeg" alt="Chandanlal Parida profile photo" class="img-fluid rounded-0" style="border: none; box-shadow: none;" loading="lazy" decoding="async">
+      <h1 class="text-light"><a href="index.html">Dr. Chandanlal Parida</a></h1>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <!--<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div id="particles-js"></div>
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Satellite Oceanography</h1>
-      <article role="article" aria-label="Role summary">
-        <p>
-          <span id="im-a-label">I'm a </span>
-          <span class="typed" aria-live="polite" role="status" aria-atomic="true"
-            data-typed-items="Consultant (BMT), Research Officer (UWA), Research Assistant (WAMSI), Marine Biologist, GIS Specialist, Oceanographer, Coastal and Marine Analyst"></span>
-        </p>
-      </article>
-    </div>
-  </section>
-  <!-- End Hero -->-->
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="about.html"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="resume.html"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        <li><a href="portfolio.html"><i class="bx bx-book-content"></i> Portfolio</a></li>
+        <li><a href="publications.html"><i class="bx bx-book"></i> Research Output</a></li>
+        <li><a href="contact.html"><i class="bx bx-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <button type="button" class="mobile-nav-toggle d-xl-none">
+      <i class="icofont-navigation-menu"></i>
+    </button>
+  </div>
+</header>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
   <div id="particles-js"></div>
-  <div class="hero-container text-center" data-aos="fade-in">
-    
-    <!-- Study Title -->
+  <div class="hero-container">
     <h1 id="study-title">Satellite Oceanography</h1>
-    
-    <!-- Study Importance -->
-    <p id="study-desc">
-      Unlocking global ocean insights from space to ocean.
-    </p>
+    <p id="study-desc">Unlocking global ocean insights from space to ocean.</p>
   </div>
 </section>
-<!-- End Hero -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/typed.js/typed.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/particles.js/particles.min.js"></script>
 
 <script>
-  // Array of studies and their importance
   const studies = [
     { title: "Oceanic Biophysical Interactions", desc: "Understanding the dynamic link between marine life and physical ocean processes." },
     { title: "Ocean Biogeochemistry", desc: "Tracking the chemical cycles that sustain ocean health and climate balance." },
@@ -128,238 +143,39 @@
   ];
 
   let index = 0;
-
   function showNextStudy() {
     const titleEl = document.getElementById("study-title");
     const descEl = document.getElementById("study-desc");
-
-    // Animate fade out
     titleEl.style.opacity = 0;
     descEl.style.opacity = 0;
-
     setTimeout(() => {
-      // Update content
       titleEl.textContent = studies[index].title;
       descEl.textContent = studies[index].desc;
-
-      // Animate fade in
       titleEl.style.opacity = 1;
       descEl.style.opacity = 1;
-
-      // Move to next study
       index = (index + 1) % studies.length;
-    }, 500); // fade-out duration
+    }, 500);
   }
-
-  // Change study every 5 seconds
   setInterval(showNextStudy, 5000);
+
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#00ffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.9 },
+      "size": { "value": 5, "random": true },
+      "line_linked": { "enable": true, "distance": 150, "color": "#00ffff", "opacity": 0.8, "width": 1 },
+      "move": { "enable": true, "speed": 6, "direction": "none", "out_mode": "out" }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+      "modes": { "repulse": { "distance": 200 }, "push": { "particles_nb": 4 } }
+    },
+    "retina_detect": true
+  });
 </script>
 
-<style>
-  /* Responsive hero text */
-  #study-title {
-    font-size: clamp(2rem, 6vw, 4rem); /* scales from 2rem to 4rem depending on viewport */
-    font-weight: 700;
-    margin-bottom: 1rem;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  #study-desc {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* scales from 1rem to 1.5rem */
-    max-width: 700px;
-    line-height: 1.5;
-    margin: 0 auto;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  /* Ensure hero section fills screen */
-  #hero {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    text-align: center;
-    padding: 0 20px;
-  }
-</style>
-
-
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/particles.js/particles.min.js"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="script.js"></script>
-
-  <script>
-    // Ensure the correct indefinite article ('a' vs 'an') appears before the typed role.
-    (function () {
-      try {
-        var typedEl = document.querySelector('.typed');
-        var label = document.getElementById('im-a-label');
-        if (!typedEl || !label) return;
-
-        function needsAn(word) {
-          if (!word) return false;
-          var w = word.trim().toLowerCase();
-          // basic vowel-sound test (a, e, i, o, u). Covers most common cases.
-          return /^[aeiou]/.test(w);
-        }
-
-        function updateLabelFor(text) {
-          var article = needsAn(text) ? 'an ' : 'a ';
-          label.textContent = "I'm " + article;
-        }
-
-        // initial attempt: use the visible text or the first item from data-typed-items
-        var initial = (typedEl.textContent && typedEl.textContent.trim()) || (typedEl.getAttribute('data-typed-items') || '').split(',')[0] || '';
-        updateLabelFor(initial);
-
-        // Watch for changes made by Typed.js and update the article accordingly
-        var mo = new MutationObserver(function () {
-          updateLabelFor(typedEl.textContent || '');
-        });
-        mo.observe(typedEl, { characterData: true, childList: true, subtree: true });
-      } catch (e) {
-        // silent fail — site should still work without this helper
-        console.error('article helper error', e);
-      }
-    })();
-    particlesJS('particles-js',
-      {
-        "particles": {
-          "number": {
-            "value": 80,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#00ffff"
-          },
-          "shape": {
-            "type": "circle",
-            "stroke": {
-              "width": 0,
-              "color": "#00ffff"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
-            }
-          },
-          "opacity": {
-            "value": 0.9,
-            "random": false,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 5,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 40,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#00ffff",
-            "opacity": 0.8,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 6,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
-            },
-            "resize": true
-          },
-          "modes": {
-            "grab": {
-              "distance": 400,
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 400,
-              "size": 40,
-              "duration": 2,
-              "opacity": 8,
-              "speed": 3
-            },
-            "repulse": {
-              "distance": 200
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
-        },
-        "retina_detect": true,
-        "config_demo": {
-          "hide_card": false,
-          "background_color": "#b61924",
-          "background_image": "",
-          "background_position": "50% 50%",
-          "background_repeat": "no-repeat",
-          "background_size": "cover"
-        }
-      }
-
-    );
-  </script>
-
 </body>
-
 </html>
