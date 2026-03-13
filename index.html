@@ -84,7 +84,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <!--<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div id="particles-js"></div>
     <div class="hero-container" data-aos="fade-in">
       <h1>Satellite Oceanography</h1>
@@ -97,7 +97,70 @@
       </article>
     </div>
   </section>
-  <!-- End Hero -->
+  <!-- End Hero -->-->
+
+    <!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <div id="particles-js"></div>
+  <div class="hero-container text-center" data-aos="fade-in">
+    
+    <!-- Study Title -->
+    <h1 id="study-title" style="font-size: 3rem; margin-bottom: 1rem;">Satellite Oceanography</h1>
+    
+    <!-- Study Importance -->
+    <p id="study-desc" style="font-size: 1.25rem; max-width: 700px; line-height: 1.5;">
+      Unlocking global ocean insights from space to monitor currents, temperature, and ecosystems.
+    </p>
+  </div>
+</section>
+<!-- End Hero -->
+
+<script>
+  // Array of studies and their importance
+  const studies = [
+    { title: "Satellite Oceanography", desc: "Unlocking global ocean insights from space to monitor currents, temperature, and ecosystems." },
+    { title: "Oceanic Biophysical Interactions", desc: "Understanding the dynamic link between marine life and physical ocean processes." },
+    { title: "Ocean Biogeochemistry", desc: "Tracking the chemical cycles that sustain ocean health and climate balance." },
+    { title: "Marine Optics", desc: "Revealing how light interacts with the ocean to study clarity, productivity, and ecosystems." },
+    { title: "Ocean Colour Remote Sensing", desc: "Detecting ocean health and productivity from satellite color signals." },
+    { title: "Climate Change", desc: "Assessing oceans’ role in climate shifts and guiding adaptation strategies." },
+    { title: "Bio‑optical & Coupled‑Optical‑Biogeochemical Modelling", desc: "Integrating light and biology to predict marine ecosystem responses." },
+    { title: "Emerging & Advanced Ocean Observation", desc: "Harnessing next-gen drones for ultra-detailed, real-time ocean monitoring." }
+  ];
+
+  let index = 0;
+
+  function showNextStudy() {
+    const titleEl = document.getElementById("study-title");
+    const descEl = document.getElementById("study-desc");
+
+    // Animate fade out
+    titleEl.style.opacity = 0;
+    descEl.style.opacity = 0;
+
+    setTimeout(() => {
+      // Update content
+      titleEl.textContent = studies[index].title;
+      descEl.textContent = studies[index].desc;
+
+      // Animate fade in
+      titleEl.style.opacity = 1;
+      descEl.style.opacity = 1;
+
+      // Move to next study
+      index = (index + 1) % studies.length;
+    }, 500); // fade-out duration
+  }
+
+  // Change study every 5 seconds
+  setInterval(showNextStudy, 5000);
+</script>
+
+<style>
+  #study-title, #study-desc {
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
 
 
 
