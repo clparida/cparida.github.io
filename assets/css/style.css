@@ -185,7 +185,7 @@ a:hover {
   align-items: right;
   text-align: center;
   overflow: hidden;
-  background: url("../img/hero-bg.jpg") top center no-repeat;
+  background: url("../img/background.jpg") top center no-repeat;
   background-size: cover;
 }
 
