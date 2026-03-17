@@ -296,7 +296,66 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+/* ===== Interesting Research Section ===== */
 
+.interesting-research {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.research-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+.research-figure img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+.research-text {
+  flex: 1;
+}
+
+.abstract {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.paper-link {
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.paper-link:hover {
+  text-decoration: underline;
+}
+
+/* Alternate layout */
+.interesting-research .research-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ===== Mobile Responsive ===== */
+
+@media (max-width: 768px) {
+  .research-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .interesting-research .research-item:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .research-figure img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
