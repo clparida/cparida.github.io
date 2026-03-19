@@ -7,53 +7,39 @@
 # Root Variables
 --------------------------------------------------------------*/
 :root {
-  --font-base: "Nexus Sans Pro", Arial, sans-serif;
-
-  --primary: teal;
-  --secondary: #006666;
-
-  --bg: #ffffff;
-  --text: #2d2b2c;
-  --card-bg: #f5f8fd;
-
-  --radius: 10px;
-  --transition: all 0.3s ease;
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1a2a;
-    --text: #ffffff;
-    --card-bg: #112b45;
-    --primary: #00a8a8;
-    --secondary: #00cccc;
-  }
+  --font-base: "Nexus Sans Pro", "NexusSansPro", "Nexus Sans", Arial, Helvetica, sans-serif;
+  --primary-color: teal;
+  --secondary-color: #006666;
+  --light-color: #fff;
+  --dark-color: #2d2b2c;
 }
 
 /*--------------------------------------------------------------
 # Global Styles
 --------------------------------------------------------------*/
 body {
-  font-family: var(--font-base);
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-base) !important;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base) !important;
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, a, span, button, input, textarea {
-  font-family: inherit;
+p, a, span, strong, em, label, input, select, textarea, button, .btn {
+  font-family: var(--font-base) !important;
 }
 
 a {
-  color: inherit;
+  color: var(--light-color);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.3s;
 }
-
 a:hover {
-  color: var(--secondary);
+  color: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
@@ -64,22 +50,28 @@ a:hover {
   display: none;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: var(--primary);
-  color: var(--bg);
+  background: var(--primary-color);
+  color: var(--light-color);
   z-index: 9999;
   cursor: pointer;
-  transition: var(--transition);
+}
+
+.back-to-top i {
+  font-size: 24px;
+  position: absolute;
+  top: 7px;
+  left: 8px;
 }
 
 .back-to-top:hover {
-  background: var(--secondary);
+  background: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
-# Header & Navigation
+# Header
 --------------------------------------------------------------*/
 #header {
   position: fixed;
@@ -87,25 +79,29 @@ a:hover {
   left: 0;
   bottom: 0;
   width: 300px;
-  background: var(--primary);
+  background: var(--primary-color);
   padding: 0 15px;
   overflow-y: auto;
   z-index: 9997;
-  transition: var(--transition);
+  transition: all 0.5s ease-in-out;
 }
 
 #header .profile img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid var(--secondary);
+  border: 8px solid var(--secondary-color);
 }
 
 #header .profile h1 {
   font-size: 24px;
   font-weight: 600;
   text-align: center;
-  color: var(--bg);
+  color: var(--light-color);
+}
+
+#header .profile h1 a {
+  color: var(--light-color);
 }
 
 #main {
@@ -117,55 +113,44 @@ a:hover {
   #main { margin-left: 0; }
 }
 
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
 .nav-menu {
   padding-top: 30px;
 }
-
-.nav-menu ul {
-  list-style: none;
-  padding: 0;
+.nav-menu * {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-.nav-menu li {
+.nav-menu > ul > li {
+  position: relative;
   white-space: nowrap;
 }
-
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: var(--bg);
+  color: var(--light-color);
   padding: 12px 15px;
   margin-bottom: 8px;
   font-size: 15px;
-  position: relative;
-  transition: var(--transition);
+  transition: 0.3s;
 }
-
-/* Nav Hover: Sliding underline + icon color */
-.nav-menu a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: var(--secondary);
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
 .nav-menu a i {
   padding-right: 8px;
   font-size: 24px;
-  transition: color 0.3s ease;
+  color: var(--light-color);
 }
-
-.nav-menu a:hover i {
-  color: var(--secondary);
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+  color: var(--secondary-color);
+}
+.nav-menu a:hover i,
+.nav-menu .active > a i,
+.nav-menu li:hover > a i {
+  color: var(--secondary-color);
 }
 
 /*--------------------------------------------------------------
@@ -181,11 +166,9 @@ a:hover {
   font-size: 24px;
   cursor: pointer;
 }
-
 .mobile-nav-toggle i {
-  color: var(--secondary);
+  color: var(--secondary-color);
 }
-
 .mobile-nav-active #header {
   left: 0;
 }
@@ -194,57 +177,91 @@ a:hover {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 40px;
+  position: relative;
+  width: 100%;
   height: 100vh;
-  background: url("assets/img/portfolio/background.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  text-align: center;
+  overflow: hidden;
+  background: url("assets/img/portfolio/background.jpg") top center no-repeat;
+  background-size: cover;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5,13,24,0.3);
+  z-index: 1;
+}
+
+#hero .hero-container {
+  position: relative;
+  z-index: 2;
+  min-width: 300px;
+  padding: 0 15px;
 }
 
 #hero h1 {
   font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
   line-height: 1.2;
+  color: var(--light-color);
+  margin-bottom: 1rem;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #hero p {
-  max-width: 600px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  max-width: 700px;
+  color: var(--light-color);
+  margin: 0 auto;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Particles.js container */
 #particles-js {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  background: transparent;
 }
 
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
 .btn-secondary {
-  background: var(--card-bg);
-  border: 2px solid var(--primary);
-  color: var(--text);
+  background: var(--light-color);
+  border: 3px solid var(--primary-color);
+  color: var(--dark-color);
   padding: 10px 20px;
-  border-radius: var(--radius);
+  text-align: center;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
 }
-
-.btn-secondary:hover {
-  background: var(--secondary);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--primary-color);
+  color: var(--light-color);
+  outline: none;
+  box-shadow: none;
 }
-
-/* Optional glow effect */
-.btn-secondary:hover {
-  box-shadow: 0 0 15px var(--secondary), 0 8px 20px rgba(0, 0, 0, 0.2);
+.btn-secondary:active {
+  background: var(--primary-color) !important;
+  color: var(--light-color);
 }
 
 /*--------------------------------------------------------------
-# Sections / Cards
+# Sections
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
@@ -252,34 +269,35 @@ section {
 }
 
 .section-bg {
-  background: var(--card-bg);
-  border-radius: var(--radius);
+  background: #f5f8fd;
 }
 
-.card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-title {
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
   position: relative;
 }
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Optional gradient overlay on hover */
-.card:hover::before {
-  content: "";
+.section-title h2::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(0, 168, 168, 0.2), rgba(0, 102, 102, 0.2));
-  pointer-events: none;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: 0;
 }
+.section-title p {
+  margin-bottom: 0;
+}
+/* ===== Interesting Research Section ===== */
 
-/* Research Section */
 .interesting-research {
   max-width: 1100px;
   margin: auto;
@@ -290,16 +308,11 @@ section {
   align-items: center;
   gap: 40px;
   margin-bottom: 70px;
-  transition: transform 0.3s ease;
-}
-
-.research-item:hover {
-  transform: translateY(-5px);
 }
 
 .research-figure img {
   width: 350px;
-  border-radius: var(--radius);
+  border-radius: 10px;
 }
 
 .research-text {
@@ -314,6 +327,7 @@ section {
 .paper-link {
   font-weight: 600;
   color: #0066cc;
+  text-decoration: none;
 }
 
 .paper-link:hover {
@@ -325,49 +339,16 @@ section {
   flex-direction: row-reverse;
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  padding: 15px;
-  color: var(--bg);
-  font-size: 14px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 300px;
-  background: var(--primary);
-  text-align: center;
-}
+/* ===== Mobile Responsive ===== */
 
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: auto;
-  }
-}
-
-/*--------------------------------------------------------------
-# Mobile Responsive
---------------------------------------------------------------*/
 @media (max-width: 768px) {
-  #header {
-    width: 250px;
-  }
-
-  #main {
-    margin-left: 0;
-  }
-
-  #hero {
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-
   .research-item {
     flex-direction: column;
     text-align: center;
+  }
+
+  .interesting-research .research-item:nth-child(even) {
+    flex-direction: column;
   }
 
   .research-figure img {
@@ -375,175 +356,84 @@ section {
     max-width: 400px;
   }
 }
+.help-page body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0b1a2a;
+    color: #ffffff;
+}
 
+.help-page header {
+    background: linear-gradient(90deg, #0b3d91, #06142b);
+    padding: 20px;
+    text-align: center;
+}
+
+.help-page .card {
+    background: #112b45;
+}
 /*--------------------------------------------------------------
-# Animations
+# Footer
 --------------------------------------------------------------*/
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/*--------------------------------------------------------------
-# 🔥 Advanced Card Effects (3D Tilt + Glow)
---------------------------------------------------------------*/
-.card {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-/* Glow border effect */
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(120deg, transparent, rgba(77,184,255,0.3), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.card:hover::after {
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
-# ✨ Button Effects (Glow + Ripple Feel)
---------------------------------------------------------------*/
-.btn-secondary {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Glow */
-.btn-secondary:hover {
-  box-shadow: 0 0 20px var(--primary), 0 0 40px var(--secondary);
-}
-
-/* Ripple animation */
-.btn-secondary::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.5s, height 0.5s;
-}
-
-.btn-secondary:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-/*--------------------------------------------------------------
-# 🧭 Navigation Effects (Smooth underline + slide)
---------------------------------------------------------------*/
-.nav-menu a {
-  position: relative;
-  overflow: hidden;
-}
-
-/* underline animation */
-.nav-menu a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0;
+#footer {
+  padding: 15px;
+  color: var(--light-color);
+  font-size: 14px;
+  position: fixed;
+  left: 0;
   bottom: 0;
-  left: 0;
-  background: var(--highlight);
-  transition: width 0.3s ease;
+  width: 300px;
+  z-index: 9999;
+  background: var(--primary-color);
+}
+#footer .copyright,
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: #eaebf0;
 }
 
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-/* subtle slide */
-.nav-menu a:hover {
-  transform: translateX(5px);
-}
-
-/*--------------------------------------------------------------
-# 🔍 Input Focus Effect (Glow + Smooth)
---------------------------------------------------------------*/
-header input {
-  transition: all 0.3s ease;
-}
-
-header input:focus {
-  outline: none;
-  box-shadow: 0 0 10px var(--highlight);
-  transform: scale(1.02);
-}
-
-/*--------------------------------------------------------------
-# ✨ Link Hover Animation
---------------------------------------------------------------*/
-a {
-  position: relative;
-}
-
-a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 1px;
-  background: var(--highlight);
-  left: 0;
-  bottom: -2px;
-  transition: width 0.3s;
-}
-
-a:hover::after {
-  width: 100%;
-}
-
-/*--------------------------------------------------------------
-# ⚡ Smooth Fade-in for Sections
---------------------------------------------------------------*/
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-section:nth-child(2) { animation-delay: 0.2s; }
-section:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 1199px) {
+  #footer {
+    position: static;
+    width: auto;
+    padding: 15px;
   }
 }
 
 /*--------------------------------------------------------------
-# 🌟 Tag Hover Effect
+# Responsive
 --------------------------------------------------------------*/
-.tag {
-  transition: all 0.3s ease;
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+  }
+  #hero p {
+    font-size: 16px;
+  }
+  #header {
+    width: 250px;
+  }
+  #main {
+    margin-left: 0;
+  }
 }
 
-.tag:hover {
-  background: var(--highlight);
-  transform: scale(1.1);
-  box-shadow: 0 0 10px var(--highlight);
+/*--------------------------------------------------------------
+# Carousel Indicators
+--------------------------------------------------------------*/
+.carousel-indicators [data-bs-target] {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  margin: 0 6px;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s, border 0.2s;
+}
+.carousel-indicators .active {
+  background-color: #007bff;
+  opacity: 1;
+  border: 2px solid #0056b3;
 }
