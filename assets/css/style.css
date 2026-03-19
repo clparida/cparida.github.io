@@ -356,6 +356,22 @@ section {
     max-width: 400px;
   }
 }
+.help-page body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0b1a2a;
+    color: #ffffff;
+}
+
+.help-page header {
+    background: linear-gradient(90deg, #0b3d91, #06142b);
+    padding: 20px;
+    text-align: center;
+}
+
+.help-page .card {
+    background: #112b45;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
