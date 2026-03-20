@@ -10,54 +10,76 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/beautify.css" rel="stylesheet">
 
   <style>
-    /* Social Media Icons */
+    /* Social Icons */
     .social-icons a {
       display: inline-block;
       margin: 10px;
-      transition: 0.3s;
     }
 
     .social-icons img {
       width: 45px;
-      height: 45px;
+      transition: 0.3s;
     }
 
     .social-icons img:hover {
       transform: scale(1.2);
     }
 
-    /* Contact Form Styling */
+    /* Contact Form */
     .contact-form {
-      background: #ffffff;
+      background: #fff;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      margin-bottom: 15px;
-    }
-
-    .section-title {
-      margin-bottom: 40px;
+    /* Acknowledgement Section */
+    .acknowledgement-section {
+      background: #f8f9fa;
+      padding: 60px 20px;
+      margin-top: 50px;
+      border-top: 1px solid #ddd;
       text-align: center;
     }
 
-    .section-title h2 {
+    .acknowledgement-section h3 {
       font-weight: bold;
+      margin-bottom: 15px;
     }
 
-    .section-title p {
+    .acknowledgement-section p {
+      max-width: 900px;
+      margin: auto;
       color: #555;
+      line-height: 1.7;
+    }
+
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .logo-container img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      transition: 0.3s;
+      opacity: 0.85;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.1);
+      opacity: 1;
     }
   </style>
 
@@ -65,113 +87,119 @@
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-  <!-- ======= Header / Sidebar ======= -->
+  <!-- Header -->
   <header id="header">
     <div class="d-flex flex-column">
       <div class="profile">
-        <img src="assets/img/portfolio/profile.jpeg" alt="Chandanlal Parida profile photo"
-          class="img-fluid rounded-0" style="border: none; box-shadow: none;" loading="lazy" decoding="async">
+        <img src="assets/img/portfolio/profile.jpeg" class="img-fluid">
         <h1 class="text-light"><a href="index.html">Dr. Chandanlal Parida</a></h1>
       </div>
-
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html"><i class="bx bx-home"></i> Home</a></li>
-          <li><a href="About me.html"><i class="bx bx-user"></i> About me</a></li>
-          <li><a href="Intresting Research.html"><i class="bx bx-file-blank"></i> Intresting Research</a></li>
-          <li><a href="Help.html"><i class="bx bx-book-content"></i> Help</a></li>
-          <li><a href="Contact.html"><i class="bx bx-book"></i> Contact</a></li>
-        </ul>
-      </nav>
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
     </div>
   </header>
 
-  <!-- ======= Main Contact Section ======= -->
+  <!-- Main -->
   <main id="main">
     <section class="contact-section">
       <div class="container">
 
-        <div class="section-title">
+        <div class="text-center mb-5">
           <h2>Contact</h2>
-          <p>If you would like to collaborate or ask a research question, please use the contact form below.</p>
+          <p>If you would like to collaborate or ask a research question, please use the form below.</p>
         </div>
 
         <div class="row">
 
-          <!-- Social Media Logos -->
+          <!-- Social -->
           <div class="col-lg-4 text-center">
             <h4>Research Profiles</h4>
             <div class="social-icons">
-              <a href="https://www.linkedin.com/in/chandanlal-parida-8a088a8b/" target="_blank">
-                <img src="assets/img/Linkedin.png" alt="LinkedIn">
+              <a href="https://www.linkedin.com" target="_blank">
+                <img src="assets/img/Linkedin.png">
               </a>
-              <a href="https://x.com/ChandanOrbits" target="_blank">
-                <img src="assets/img/X.png" alt="Twitter">
+              <a href="#">
+                <img src="assets/img/X.png">
               </a>
-              <a href="https://scholar.google.com/citations?user=JEd0PIAAAAAJ&hl=en" target="_blank">
-                <img src="assets/img/Googlescholar.png" alt="Google Scholar">
+              <a href="#">
+                <img src="assets/img/Googlescholar.png">
               </a>
-              <a href="https://www.researchgate.net/profile/Chandanlal-Parida-2?ev=hdr_xprf" target="_blank">
-                <img src="assets/img/ResearchGate.png" alt="ResearchGate">
+              <a href="#">
+                <img src="assets/img/ResearchGate.png">
               </a>
             </div>
           </div>
 
-          <!-- Contact Form -->
+          <!-- Form -->
           <div class="col-lg-8">
             <div class="contact-form">
               <form action="forms/contact.php" method="POST">
-
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-
-                <input type="text" name="affiliation" class="form-control"
-                  placeholder="Affiliation (University / Organization)" required>
-
-                <input type="text" name="position" class="form-control"
-                  placeholder="Position (Student / Researcher / Professor)">
-
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-
-                <textarea name="message" class="form-control" rows="6" placeholder="Your Question / Message"
-                  required></textarea>
+                <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+                <input type="text" name="affiliation" class="form-control mb-3" placeholder="Affiliation" required>
+                <input type="text" name="position" class="form-control mb-3" placeholder="Position">
+                <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+                <textarea name="message" class="form-control mb-3" rows="6" placeholder="Message" required></textarea>
 
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary mt-2">Send Message</button>
+                  <button type="submit" class="btn btn-primary">Send Message</button>
                 </div>
-
               </form>
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
+
+    <!-- ======= Acknowledgement Section ======= -->
+    <section class="acknowledgement-section">
+
+      <h3>Acknowledgements</h3>
+      <p>
+        This website uses publicly available data and resources from leading scientific organizations such as
+        <strong>NASA</strong> and <strong>ESA</strong>. We acknowledge their valuable contributions to open science.
+      </p>
+
+      <!-- Logos -->
+      <div class="logo-container">
+
+        <a href="https://www.nasa.gov" target="_blank">
+          <img src="assets/img/logos/nasa.png" alt="NASA">
+        </a>
+
+        <a href="https://www.esa.int" target="_blank">
+          <img src="assets/img/logos/esa.png" alt="ESA">
+        </a>
+
+        <a href="https://podaac.jpl.nasa.gov/" target="_blank">
+          <img src="assets/img/logos/podaac.png" alt="PO.DAAC">
+        </a>
+
+        <a href="https://oceancolor.gsfc.nasa.gov/" target="_blank">
+          <img src="assets/img/logos/oceancolor.png" alt="Ocean Color">
+        </a>
+
+      </div>
+
+      <h3 class="mt-5">Disclaimer</h3>
+      <p>
+        This website is developed solely for educational purposes to provide exposure to
+        satellite oceanography and ocean color science. It does not represent official views
+        of NASA, ESA, or any affiliated organizations.
+      </p>
+
+    </section>
+
   </main>
 
-  <!-- ======= Footer ======= -->
+  <!-- Footer -->
   <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        <span id="year"></span> &copy; Dr Chandanlal Parida - All Rights Reserved.
-      </div>
-      <div class="credits">
-        Designed by <a target="_blank"
-          href="https://www.linkedin.com/in/chandanlal-parida-8a088a8b/">Dr Chandanlal Parida</a>
-      </div>
+    <div class="container text-center">
+      <span id="year"></span> © Dr Chandanlal Parida
     </div>
-
-    <script>
-      var today = new Date();
-      var year = today.getFullYear();
-      document.getElementById("year").innerHTML = year;
-    </script>
   </footer>
 
-</body>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
 
+</body>
 </html>
