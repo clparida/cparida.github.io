@@ -251,6 +251,12 @@ background: var(--accent-color);
   background: var(--bg-color);
 }
 
+.about-page header {
+padding: 20px;
+text-align: center;
+background: var(--secondary-color);
+}
+
 .about-text {
   max-width: 900px;
   margin: auto;
