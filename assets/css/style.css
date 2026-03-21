@@ -308,10 +308,30 @@ color: var(--accent-color);
 
 --------------------------------------------------------------*/
 #footer {
-background: var(--light-color);
-color: var(--dark-color);
-padding: 15px;
-border-top: 1px solid #eee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  padding: 15px;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border-top: 1px solid #eee;
+  z-index: 9999;
+}
+
+#footer .copyright,
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: var(--dark-color);
+}
+
+#footer a {
+  color: var(--accent-color);
+}
+
+#footer a:hover {
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
