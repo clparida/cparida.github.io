@@ -11,48 +11,185 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Your main CSS -->
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/beautify.css" rel="stylesheet">
+
+  <style>
+    /* ===== Banner ===== */
+    .banner-heading {
+      background-color: #e6f4f1;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .highlight-heading h2 {
+      background-color: #e6f4f1;
+      padding: 5px 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .content-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    /* ===== Published Papers ===== */
+    .paper-item {
+      display: flex;
+      gap: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .paper-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .paper-item img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .paper-item div {
+      flex: 1;
+    }
+
+    .paper-link {
+      color: #0a7f6f;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .paper-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .paper-item {
+        flex-direction: column;
+      }
+
+      .paper-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 
-<!-- ✅ IMPORTANT: add help-page class -->
 <body class="help-page">
 
-  <!-- Mobile nav toggle -->
-  <button type="button" class="mobile-nav-toggle d-xl-none">
-    <i class="icofont-navigation-menu"></i>
-  </button>
+<!-- Mobile nav -->
+<button type="button" class="mobile-nav-toggle d-xl-none">
+  <i class="icofont-navigation-menu"></i>
+</button>
 
-  <!-- ======= Sidebar Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-      <div class="profile">
-        <img src="assets/img/portfolio/profile.jpeg"
-             alt="Chandanlal Parida profile photo"
-             class="img-fluid rounded-0"
-             style="border: none; box-shadow: none;"
-             loading="lazy">
+<!-- ===== Sidebar ===== -->
+<header id="header">
+  <div class="d-flex flex-column">
 
-        <h1 class="text-light">
-          <a href="index.html">Dr. Chandanlal Parida</a>
-        </h1>
+    <div class="profile">
+      <img src="assets/img/portfolio/profile.jpeg" class="img-fluid" alt="">
+      <h1 class="text-light"><a href="index.html">Dr. Chandanlal Parida</a></h1>
 
-        <nav class="nav-menu">
-          <ul>
-            <li><a href="index.html"><i class="bx bx-home"></i> Home</a></li>
-            <li><a href="About me.html"><i class="bx bx-user"></i> About me</a></li>
-           <li class="active"><a href="Intresting Research.html"><i class="bx bx-file-blank"></i> Interesting Research</a></li>
-            <li><a href="Help.html"><i class="bx bx-book-content"></i> Help</a></li>
-            <li><a href="Contact.html"><i class="bx bx-book"></i> Contact</a></li>
-          </ul>
-        </nav>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html"><i class="bx bx-home"></i> Home</a></li>
+          <li><a href="About me.html"><i class="bx bx-user"></i> About me</a></li>
+          <li class="active"><a href="#"><i class="bx bx-file-blank"></i> Interesting Research</a></li>
+          <li><a href="Help.html"><i class="bx bx-book-content"></i> Help</a></li>
+          <li><a href="Contact.html"><i class="bx bx-book"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main id="main">
+
+  <!-- Banner -->
+  <section class="banner-heading">
+    <h1>Research & Publications</h1>
+  </section>
+
+  <!-- ===== Published Papers ===== -->
+  <section class="container content-box" data-aos="fade-up">
+
+    <div class="section-title highlight-heading">
+      <h2>Published Papers</h2>
+    </div>
+
+    <!-- Paper 1 -->
+    <div class="paper-item">
+      <img src="assets/img/papers/paper1.jpg" alt="">
+      <div>
+        <h3>Bio-optical Modelling of Case-II Waters in the Bay of Bengal</h3>
+        <p><strong>Journal:</strong> Remote Sensing of Environment</p>
+        <p><strong>Year:</strong> 2024 | <strong>Authors:</strong> Parida et al.</p>
+        <p>
+          A novel model describing light interaction in optically complex coastal waters.
+        </p>
+        <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
       </div>
     </div>
-  </header>
+
+    <!-- Paper 2 -->
+    <div class="paper-item">
+      <img src="assets/img/papers/paper2.jpg" alt="">
+      <div>
+        <h3>Satellite-Based Ocean Observation Techniques</h3>
+        <p><strong>Journal:</strong> Journal of Marine Systems</p>
+        <p><strong>Year:</strong> 2023 | <strong>Authors:</strong> Parida et al.</p>
+        <p>
+          Advanced satellite data integration for monitoring ocean dynamics.
+        </p>
+        <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="copyright">
+      © <span id="year"></span> Dr Chandanlal Parida
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
