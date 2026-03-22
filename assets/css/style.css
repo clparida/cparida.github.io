@@ -164,7 +164,10 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url("assets/img/portfolio/background.jpg") center / cover no-repeat;
+  background-image: url("../img/portfolio/background.jpg"); /* correct relative path */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #hero::before {
