@@ -68,9 +68,9 @@
       background-color: #fafafa;
     }
 /* ===== Research & cards spacing ===== */
-    .research-item {
+  .research-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;   /* aligns text nicely with top */
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -79,15 +79,12 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
+  flex-shrink: 0;           /* prevents image from shrinking */
 }
 
-    /* ===== Lists styling ===== */
-    ul.list {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin: 0;
-    }
-
+.research-item div {
+  flex: 1;                  /* text takes remaining space */
+}
     /* ===== Responsive Design ===== */
     @media (max-width: 1200px) {
       .banner-heading h1 { font-size: 2.2em; }
@@ -212,29 +209,29 @@
   </div>
 
   <div class="research-item">
-    <img src="assets/img/iow_logo.png" alt="Institution Logo">
+    <img src="assets/img/institution1_logo.png" alt="IOW Logo">
     <div>
       <h3>Postdoctoral Research Scholar</h3>
       <p><strong>Leibniz Institute for Baltic Sea Research Warnemünde (IOW), Germany</strong> | Present</p>
-      <p>Conducting research on ocean biogeochemistry, bio-optical modelling, and Baltic Sea ecosystem dynamics.</p>
+      <p>Research on ocean biogeochemistry and bio-optical modelling.</p>
     </div>
   </div>
 
   <div class="research-item">
-    <img src="assets/img/Curtin_logo.png" alt="Institution Logo">
+    <img src="assets/img/institution2_logo.png" alt="Curtin Logo">
     <div>
       <h3>Postdoctoral Researcher</h3>
       <p><strong>Curtin University, Australia</strong></p>
-      <p>Worked on satellite oceanography and advanced ocean observation technologies.</p>
+      <p>Worked on satellite oceanography and ocean observation technologies.</p>
     </div>
   </div>
 
   <div class="research-item">
-    <img src="assets/img/IISc_logo.jpg" alt="Institution Logo">
+    <img src="assets/img/institution3_logo.png" alt="IISc Logo">
     <div>
       <h3>Postdoctoral Researcher</h3>
       <p><strong>Indian Institute of Science (IISc), Bangalore, India</strong></p>
-      <p>Focused on oceanic biophysical interactions and modelling of marine systems.</p>
+      <p>Focused on oceanic biophysical interactions and modelling.</p>
     </div>
   </div>
 
