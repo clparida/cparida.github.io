@@ -79,6 +79,55 @@
   height: 60px;
   object-fit: contain;
 }
+    /* ===== Paper Box Layout ===== */
+.paper-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Left image */
+.paper-box img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Right content */
+.paper-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.2em;
+}
+
+.paper-content p {
+  margin: 0 0 10px;
+}
+
+/* Link style */
+.paper-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .paper-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paper-box img {
+    width: 100%;
+    height: auto;
+  }
+}
     /* ===== Responsive Design ===== */
     @media (max-width: 1200px) {
       .banner-heading h1 { font-size: 2.2em; }
@@ -144,34 +193,29 @@
       <h2>Published Papers</h2>
     </div>
 
-    <!-- Paper 1 -->
-    <div class="paper-item">
-      <img src="assets/img/papers/paper1.jpg" alt="">
-      <div>
-        <h3>Bio-optical Modelling of Case-II Waters in the Bay of Bengal</h3>
-        <p><strong>Journal:</strong> Remote Sensing of Environment</p>
-        <p><strong>Year:</strong> 2024 | <strong>Authors:</strong> Parida et al.</p>
-        <p>
-          A novel model describing light interaction in optically complex coastal waters.
-        </p>
-        <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
-      </div>
-    </div>
+  <!-- Paper 1 -->
+<div class="paper-box">
+  <img src="assets/img/papers/paper1.jpg" alt="Paper 1">
+  <div class="paper-content">
+    <h3>Bio-optical Modelling of Case-II Waters in the Bay of Bengal</h3>
+    <p>
+      A novel model describing light interaction in optically complex coastal waters.
+    </p>
+    <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
+  </div>
+</div>
 
-    <!-- Paper 2 -->
-    <div class="paper-item">
-      <img src="assets/img/papers/paper2.jpg" alt="">
-      <div>
-        <h3>Satellite-Based Ocean Observation Techniques</h3>
-        <p><strong>Journal:</strong> Journal of Marine Systems</p>
-        <p><strong>Year:</strong> 2023 | <strong>Authors:</strong> Parida et al.</p>
-        <p>
-          Advanced satellite data integration for monitoring ocean dynamics.
-        </p>
-        <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
-      </div>
-    </div>
-
+<!-- Paper 2 -->
+<div class="paper-box">
+  <img src="assets/img/papers/paper2.jpg" alt="Paper 2">
+  <div class="paper-content">
+    <h3>Satellite-Based Ocean Observation Techniques</h3>
+    <p>
+      Advanced satellite data integration for monitoring ocean dynamics.
+    </p>
+    <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> Read Paper</a>
+  </div>
+</div>
   </section>
 
 </main>
