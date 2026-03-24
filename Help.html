@@ -56,3 +56,209 @@
       </div>
     </div>
   </header>
+
+  <style>
+    /* ===== Banner ===== */
+    .banner-heading {
+      background-color: #e6f4f1;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    /* ===== Section Title ===== */
+    .highlight-heading h2 {
+      background-color: #e6f4f1;
+      padding: 5px 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    /* ===== Content Box ===== */
+    .content-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    /* ===== Resource Cards ===== */
+    .resource-item {
+      display: flex;
+      gap: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .resource-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .resource-item img {
+      width: 120px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .resource-item div {
+      flex: 1;
+    }
+
+    .resource-link {
+      color: #0a7f6f;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      .resource-item {
+        flex-direction: column;
+      }
+
+      .resource-item img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Mobile nav -->
+<button type="button" class="mobile-nav-toggle d-xl-none">
+  <i class="icofont-navigation-menu"></i>
+</button>
+
+
+<!-- ===== Main ===== -->
+<main id="main">
+
+  <!-- Banner -->
+  <section class="banner-heading">
+    <h1>Student Help & Resources</h1>
+  </section>
+
+  <!-- 📚 BOOKS -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Books</h2>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/books/oceanography.jpg" alt="">
+      <div>
+        <h3>Introduction to Physical Oceanography</h3>
+        <p>Fundamental concepts of ocean circulation and physics.</p>
+        <a href="#" class="resource-link">View Book →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🛰 Satellite Data -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Satellite Data Download</h2>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/tools/nasa.jpg" alt="">
+      <div>
+        <h3>NASA OceanColor</h3>
+        <p>Download MODIS, VIIRS ocean color data.</p>
+        <a href="https://oceancolor.gsfc.nasa.gov/" target="_blank" class="resource-link">Visit →</a>
+      </div>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/tools/copernicus.jpg" alt="">
+      <div>
+        <h3>Copernicus Marine Service</h3>
+        <p>Access global ocean and biogeochemical data.</p>
+        <a href="https://marine.copernicus.eu/" target="_blank" class="resource-link">Visit →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📊 Data Analysis -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Data Analysis</h2>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/tools/python.jpg" alt="">
+      <div>
+        <h3>Python (NumPy, xarray)</h3>
+        <p>Used for ocean data processing and modelling.</p>
+        <a href="https://www.python.org/" target="_blank" class="resource-link">Learn →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📈 Visualization -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Visualization Software</h2>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/tools/matlab.jpg" alt="">
+      <div>
+        <h3>MATLAB</h3>
+        <p>Scientific computing and visualization platform.</p>
+        <a href="https://www.mathworks.com/" target="_blank" class="resource-link">Visit →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🧰 Other Tools -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Other Useful Tools</h2>
+    </div>
+
+    <div class="resource-item">
+      <img src="assets/img/tools/qgis.jpg" alt="">
+      <div>
+        <h3>QGIS</h3>
+        <p>Open-source GIS software for spatial analysis.</p>
+        <a href="https://qgis.org/" target="_blank" class="resource-link">Download →</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <span id="year"></span> © Dr Chandanlal Parida
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200 });
+</script>
+
+</body>
+</html> 
