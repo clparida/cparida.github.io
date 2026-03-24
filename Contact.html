@@ -56,3 +56,169 @@
       </div>
     </div>
   </header>
+<style>
+    .banner-heading {
+      background-color: #e6f4f1;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .highlight-heading h2 {
+      background-color: #e6f4f1;
+      padding: 5px 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .content-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    /* Contact Info Cards */
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    .contact-item i {
+      font-size: 24px;
+      color: #0a7f6f;
+    }
+
+    /* Form */
+    .form-control {
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn-submit {
+      background: #0a7f6f;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 20px;
+      border: none;
+    }
+
+    .btn-submit:hover {
+      background: #08665a;
+    }
+   .content-box p {
+  line-height: 1.6;
+  text-align: justify;
+}
+  </style>
+ 
+
+  <!-- ===== Main ===== -->
+<main id="main">
+
+  <!-- Banner -->
+  <section class="banner-heading">
+    <h1>Contact Me</h1>
+  </section>
+
+  <!-- Contact Info -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Contact Information</h2>
+    </div>
+
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <h4>Location</h4>
+        <p>Leibniz Institute for Baltic Sea Research, Germany</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <h4>Email</h4>
+        <p>your.email@example.com</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <i class="fab fa-linkedin"></i>
+      <div>
+        <h4>LinkedIn</h4>
+        <p><a href="#" target="_blank">View Profile</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="container content-box" data-aos="fade-up">
+    <div class="section-title highlight-heading">
+      <h2>Send a Message</h2>
+    </div>
+
+    <form>
+      <input type="text" class="form-control" placeholder="Your Name" required>
+      <input type="email" class="form-control" placeholder="Your Email" required>
+      <input type="text" class="form-control" placeholder="Subject">
+      <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+
+  <div class="container content-box" data-aos="fade-up">
+
+  <div class="section-title highlight-heading">
+    <h2>Acknowledgement & Disclaimer</h2>
+  </div>
+
+  <p>
+    This website has been developed as an educational resource to support students and early-career researchers in the field of oceanography and related disciplines.
+  </p>
+
+  <p>
+    All datasets, software tools, and download links provided on this platform are publicly available and belong to their respective organizations and agencies. Proper credit is given to the original data providers and developers.
+  </p>
+
+  <p>
+    I would like to acknowledge and thank various international and national agencies, including NASA, Copernicus Marine Service, and other open-source communities, for making their data, tools, and resources freely accessible to the scientific community.
+  </p>
+
+  <p>
+    This website is intended solely for educational and informational purposes. Users are encouraged to visit the official websites of the respective organizations for detailed information, data usage policies, and licensing terms.
+  </p>
+
+  <p>
+    The content presented here does not claim ownership of any external data or software resources. All rights remain with the respective providers.
+  </p>
+
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <span id="year"></span> © Dr Chandanlal Parida
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200 });
+</script>
+
+</body>
